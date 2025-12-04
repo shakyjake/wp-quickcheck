@@ -15,10 +15,6 @@ if(!defined('ABSPATH')){
  */
 function quickcheck_form_shortcode($atts = [], $tag_content = null, $tag = '') : string {
 
-	// Enqueue necessary styles/scripts
-	wp_enqueue_style('quickcheck-form');
-	wp_enqueue_script('quickcheck-form');
-
 	$atts = is_array($atts) ? $atts : [];
 
 	$atts = array_change_key_case($atts, CASE_LOWER); // normalise attribute keys to lowercase
@@ -51,8 +47,13 @@ function quickcheck_form_shortcode($atts = [], $tag_content = null, $tag = '') :
 
 		if($response->success){
 			$field_content = '';// clear the content field on success
+			do_action('quickcheck_submission_success', $response);
 		}
 	}
+
+	// Enqueue necessary styles/scripts
+	wp_enqueue_style('quickcheck-form');
+	wp_enqueue_script('quickcheck-form');
 
 	/**
 	 * Build the form HTML
@@ -106,6 +107,18 @@ function quickcheck_form_shortcode($atts = [], $tag_content = null, $tag = '') :
 
 }
 add_shortcode('qc_form', 'quickcheck_form_shortcode');
+
+/**
+ * Logic to be called after a successful form submission
+ * 
+ * @param QuickCheckFormResponse $response The response object from the form submission
+ * @return void
+ */
+function quickcheck_form_submission_success(QuickCheckFormResponse $response) : void {
+	// currently does nothing, but could be used to trigger other actions on successful submission
+	// e.g. sending notification emails, logging, redirecting to a "thank you" page, etc.
+}
+add_action('quickcheck_submission_success', 'quickcheck_form_submission_success', 10, 1);
 
 /**
  * Validate shortcode arguments
