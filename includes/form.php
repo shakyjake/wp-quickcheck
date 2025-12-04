@@ -6,6 +6,7 @@ if(!defined('ABSPATH')){
 
 /**
  * Handle form submission
+ * 
  * @return QuickCheckFormResponse Response object containing success status and messages
  */
 function quickcheck_form_submit(int $min_content_length, int $max_content_length) : QuickCheckFormResponse {

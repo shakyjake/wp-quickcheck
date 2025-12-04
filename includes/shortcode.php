@@ -112,6 +112,7 @@ add_shortcode('qc_form', 'quickcheck_form_shortcode');
  * Logic to be called after a successful form submission
  * 
  * @param QuickCheckFormResponse $response The response object from the form submission
+ * 
  * @return void
  */
 function quickcheck_form_submission_success(QuickCheckFormResponse $response) : void {
@@ -124,6 +125,7 @@ add_action('quickcheck_submission_success', 'quickcheck_form_submission_success'
  * Validate shortcode arguments
  * 
  * @param array $settings Shortcode settings/attributes
+ * 
  * @return array Validated settings
  */
 function quickcheck_shortcode_args_validate($settings){

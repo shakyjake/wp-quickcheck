@@ -6,7 +6,7 @@
 * @wordpress-plugin
 * Plugin Name:   WP Quickcheck
 * Description:   A wordpress plugin to submit and store quick text entries.
-* Version:       1.0.2
+* Version:       1.0.3
 * Text Domain:   quickcheck
 * Author:        Jake Nicholson
 * Author URI:    https://github.com/shakyjake
@@ -24,10 +24,12 @@ if(!defined('QUICKCHECK_ROOT_FILE')){
  * Initialize the plugin
  * 
  * Defines version constant and includes necessary files
+ * 
+ * @return void
  */
 function quickcheck_init() : void {
 
-	if(!defined('QUICKCHECK_VERSION')){ // Define version constant for use in enqueuing assets
+	if(!defined('QUICKCHECK_VERSION')){ // Define version constant for use in enqueuing static assets
 		define('QUICKCHECK_VERSION', get_plugin_data(QUICKCHECK_ROOT_FILE)['Version']);
 	}
 
@@ -40,6 +42,8 @@ add_action('init', 'quickcheck_init');
 
 /**
  * Register the necessary JS/CSS files to be enqueued later
+ * 
+ * @return void
  */
 function quickcheck_enqueue_assets() : void {
 	
@@ -60,6 +64,8 @@ add_action('wp_enqueue_scripts', 'quickcheck_enqueue_assets');
  * Activation hook
  * 
  * Creates the necessary database table
+ * 
+ * @return void
  */
 function quickcheck_activate() : void {
 	

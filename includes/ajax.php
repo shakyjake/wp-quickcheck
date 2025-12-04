@@ -17,6 +17,7 @@ function quickcheck_noop() : void {
 
 /**
  * Obtain and echo the latest entries in JSON format
+ * 
  * @return void
  */
 function quickcheck_latest() : void {
