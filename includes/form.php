@@ -14,7 +14,7 @@ function quickcheck_form_submit(int $min_content_length, int $max_content_length
 
 	$content = '';
 	if(!empty($_POST['content'])){
-		$content = $_POST['content'];
+		$content = stripslashes($_POST['content']); // obtain the submitted content and strip slashes added by PHP
 	}
 
 	$auth_token = '';
