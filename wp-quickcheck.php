@@ -6,7 +6,7 @@
 * @wordpress-plugin
 * Plugin Name:   WP Quickcheck
 * Description:   A wordpress plugin to submit and store quick text entries.
-* Version:       1.0.0
+* Version:       1.0.1
 * Text Domain:   quickcheck
 * Author:        Jake Nicholson
 * Author URI:    https://github.com/shakyjake

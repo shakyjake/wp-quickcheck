@@ -53,7 +53,8 @@ function quickcheck_limit_check(event){
 			$counter = $(field).find('.quickcheck__counter');
 			$counter.removeClass('quickcheck__counter--invalid');
 			if(input.value.length > limit_upper){ // add invalid class if over limit
-				// (don't check if under limit as user may be heading in the direction of validity so no need to interupt them)
+				// don't check if under limit as user may be heading in the direction of validity so no need to interrupt them [1]
+				// [1] Form Design Patterns by Adam Silver - https://formdesignpatterns.com/
 				$counter.addClass('quickcheck__counter--invalid');
 			}
 			$counter.html(input.value.length + '/' + limit_upper); // update the character count
@@ -119,6 +120,9 @@ function quickcheck_load(){
 				counter.removeChild(counter.firstChild);
 			}
 			counter.append(document.createTextNode(input.value.length + '/' + field.dataset.limitUpper));
+			if(input.value.length > parseInt(field.dataset.limitUpper)){
+				counter.classList.add('quickcheck__counter--invalid');
+			}
 
 		}
 	});
