@@ -1,0 +1,119 @@
+
+/* Reset */
+
+.quickcheck * {
+	box-sizing: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
+
+/* Form */
+
+.quickcheck__message {
+	background: #f2f7f9;
+	background: repeating-linear-gradient(-45deg, #f2f7f9 0, #f2f7f9 1.35em, #f8fafb 1.35em, #f8fafb 2.7em);
+	border: 1px solid;
+	border-radius: 0.25em;
+	color: #20708a;
+	margin-bottom: 0.45em;
+	padding: 0.9em 1.35em;
+}
+
+.quickcheck__message--error {
+	background: #FCF4F5;
+	background: repeating-linear-gradient(-45deg, #fcf4f5 0, #fcf4f5 1.35em, #fdf9f9 1.35em, #fdf9f9 2.7em);
+	color: #C0414B;
+}
+
+.quickcheck__message--success {
+	background: #f3fbf5;
+	background: repeating-linear-gradient(-45deg, #f3fbf5 0, #f3fbf5 1.35em, #f8fdf9 1.35em, #f8fdf9 2.7em);
+	color: #28af55;
+}
+
+.quickcheck__field {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45em;
+	justify-content: flex-start;
+	padding: 0.45em 0;
+}
+
+.quickcheck__label {
+	align-items: center;
+	display: flex;
+	flex: 0 0 100%;
+	justify-content: space-between;
+	line-height: 1.8;
+}
+
+.quickcheck__input {
+	border: none;
+	border-radius: 0.25em;
+	box-shadow: 0 0 0 1px #999, 0 0 0 0.225em #0000;
+	flex: 0 0 100%;
+	max-width: calc(100% - 1.35em);
+	outline: none;
+	padding: 0.45em 0.675em;
+	transition: box-shadow 0.1s linear;
+}
+
+.quickcheck__input:hover {
+	box-shadow: 0 0 0 1px #666, 0 0 0 0.225em #0000;
+}
+
+.quickcheck__input:focus {
+	box-shadow: 0 0 0 2px #09c, 0 0 0 0.225em #0001;
+}
+
+.quickcheck__input--textarea {
+	height: 8.1em;
+	min-height: 4.5em;
+	min-width: calc(100% - 1.35em);
+	resize: vertical;
+}
+
+.quickcheck__counter {
+	flex: 0 0 100%;
+	text-align: right;
+}
+
+.quickcheck__counter--invalid {
+	color: #A62635;
+	font-weight: bold;
+}
+
+.quickcheck__btn {
+	background: #28af55;
+	border: none;
+	border-radius: 0.25em;
+	color: #fff;
+	cursor: pointer;
+	flex: 0 0 auto;
+	font-size: 0.75em;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	padding: 0.9em 2.7em;
+	text-transform: uppercase;
+	transition: opacity 0.1s linear;
+}
+
+.quickcheck__btn:hover {
+	background: #30d067;
+}
+
+.quickcheck__btn:active {
+	background: #229649;
+}
+
+.quickcheck__btn:disabled,
+.quickcheck__btn:disabled:hover
+.quickcheck__btn:disabled:active {
+	background: #28af55;
+	cursor: not-allowed;
+	opacity: 0.6;
+}
